@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import { motion } from "framer-motion";
 import { Bell, Globe2, LogOut, Settings, ChevronDown } from "lucide-react";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { VerificationStatusBadge } from "@/components/shared/VerificationStatusBadge";
@@ -50,13 +49,13 @@ export function Header() {
   ).length;
 
   return (
-    <header className="flex h-16 shrink-0 items-center justify-between border-b border-border bg-surface/40 px-5 backdrop-blur-xl">
+    <header className="flex h-16 shrink-0 items-center justify-between border-b border-border bg-white px-5">
       <Breadcrumb items={crumbs} />
 
       <div className="flex items-center gap-2.5">
         {/* Regime context chip */}
         <div className="hidden items-center gap-2 sm:flex">
-          <Globe2 className="h-4 w-4 text-muted-foreground" />
+          <Globe2 className="h-4 w-4 text-ec-grey-75" />
           <Select
             value={regimeContext}
             onValueChange={(v) => setRegimeContext(v as typeof regimeContext)}
@@ -76,7 +75,7 @@ export function Header() {
         {/* Notifications */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <button className="relative flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-white/5 text-muted-foreground transition-colors hover:text-foreground">
+            <button className="relative flex h-9 w-9 items-center justify-center rounded-md border border-border bg-white text-ec-grey transition-colors hover:bg-muted hover:text-foreground">
               <Bell className="h-4 w-4" />
               {criticalCount > 0 && (
                 <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-danger px-1 text-[9px] font-bold text-white">
@@ -97,7 +96,7 @@ export function Header() {
                 <span className="text-xs font-medium text-foreground">
                   {a.title}
                 </span>
-                <span className="line-clamp-1 text-[11px] text-muted-foreground">
+                <span className="line-clamp-1 text-[11px] text-ec-grey-75">
                   {a.summary}
                 </span>
               </DropdownMenuItem>
@@ -115,31 +114,31 @@ export function Header() {
         {/* User menu */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <button className="flex items-center gap-2 rounded-lg border border-border bg-white/5 py-1 pl-1 pr-2 transition-colors hover:bg-white/10">
+            <button className="flex items-center gap-2 rounded-md border border-border bg-white py-1 pl-1 pr-2 transition-colors hover:bg-muted">
               <Avatar className="h-7 w-7">
                 <AvatarFallback>{initials(user.name)}</AvatarFallback>
               </Avatar>
               <span className="hidden text-xs font-medium md:inline">
                 {user.name}
               </span>
-              <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />
+              <ChevronDown className="h-3.5 w-3.5 text-ec-grey-75" />
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-60">
             <div className="px-2 py-2">
               <p className="text-sm font-medium">{user.name}</p>
-              <p className="text-xs text-muted-foreground">{user.company}</p>
+              <p className="text-xs text-ec-grey-75">{user.company}</p>
               <div className="mt-2">
                 <VerificationStatusBadge status={user.verification} />
               </div>
             </div>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => router.push("/profile")}>
-              <Settings className="text-muted-foreground" />
+              <Settings className="text-ec-grey-75" />
               Profile &amp; settings
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => router.push("/")}>
-              <LogOut className="text-muted-foreground" />
+              <LogOut className="text-ec-grey-75" />
               Sign out
             </DropdownMenuItem>
           </DropdownMenuContent>

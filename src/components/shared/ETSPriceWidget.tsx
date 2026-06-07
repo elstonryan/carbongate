@@ -40,7 +40,7 @@ export function ETSPriceWidget({
 }) {
   const up = changePercent >= 0;
   const symbol = currency === "EUR" ? "€" : "£";
-  const color = up ? "#10b981" : "#ef4444";
+  const color = "#004494";
 
   return (
     <div className={cn("flex h-full flex-col", className)}>
@@ -91,13 +91,14 @@ export function ETSPriceWidget({
             </defs>
             <YAxis hide domain={["dataMin - 2", "dataMax + 2"]} />
             <Tooltip
-              cursor={{ stroke: "rgba(255,255,255,0.1)" }}
+              cursor={{ stroke: "rgba(19,40,75,0.15)" }}
               contentStyle={{
-                background: "rgba(17,24,39,0.95)",
-                border: "1px solid rgba(255,255,255,0.08)",
+                background: "#ffffff",
+                border: "1px solid #dbe3ec",
                 borderRadius: 8,
                 fontSize: 12,
-                color: "#f9fafb",
+                color: "#13284b",
+                boxShadow: "0 8px 24px -18px rgba(19,40,75,0.4)",
               }}
               formatter={(v: number) => [`${symbol}${v.toFixed(2)}`, "Price"]}
             />

@@ -32,8 +32,8 @@ export function IndustryBackground({
         {id === "electricity" && <CurrentMotif accent={accent} />}
       </div>
 
-      {/* Vignette */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50" />
+      {/* Light fade for legibility of ink text over the tinted panel */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/10 to-white/75" />
     </div>
   );
 }

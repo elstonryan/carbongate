@@ -12,10 +12,9 @@ export function AuthShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen w-full">
       {/* Left brand panel */}
-      <div className="relative hidden w-1/2 flex-col justify-between overflow-hidden p-12 lg:flex">
-        <div className="absolute inset-0 gradient-mesh opacity-50" />
-        <div className="absolute inset-0 grid-overlay opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/60 to-background/90" />
+      <div className="relative hidden w-1/2 flex-col justify-between overflow-hidden border-r border-border bg-ec-blue-5 p-12 lg:flex">
+        <div className="absolute inset-0 blueprint opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-ec-blue-5/10" />
 
         <motion.div
           initial={{ opacity: 0, y: -12 }}
@@ -23,8 +22,9 @@ export function AuthShell({ children }: { children: React.ReactNode }) {
           className="relative z-10"
         >
           <Link href="/" className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-base font-bold text-background">
-              C
+            <span className="relative flex h-9 w-9 items-center justify-center rounded-md bg-primary text-[13px] font-bold text-white">
+              CG
+              <span className="absolute inset-x-1 bottom-1 h-0.5 rounded-full bg-accent" />
             </span>
             <span className="text-xl font-semibold tracking-tight">
               Carbon<span className="text-primary">Gate</span>

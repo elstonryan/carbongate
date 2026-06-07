@@ -107,7 +107,7 @@ export const VERTICALS: Vertical[] = [
     desc: "Ask anything across EU & UK CBAM. Every answer is citation-grounded, confidence-scored, and dated — it refuses to guess.",
     icon: "Bot",
     href: "/ai-assistant",
-    hex: "#10b981",
+    hex: "#004494",
     span: "lg",
     tag: "Core",
   },
@@ -117,7 +117,7 @@ export const VERTICALS: Vertical[] = [
     desc: "EU certificates & UK levy from a tested engine — never an LLM.",
     icon: "Calculator",
     href: "/calculator",
-    hex: "#2563eb",
+    hex: "#006fb4",
     span: "md",
   },
   {
@@ -126,7 +126,7 @@ export const VERTICALS: Vertical[] = [
     desc: "Regime-gated channels for importers, exporters, verifiers and consultants.",
     icon: "MessageSquare",
     href: "/community",
-    hex: "#7c3aed",
+    hex: "#1c63b5",
     span: "md",
   },
   {
@@ -135,7 +135,7 @@ export const VERTICALS: Vertical[] = [
     desc: "Primary-source docs, sector guides and templates — each with an 'as of' date.",
     icon: "BookOpen",
     href: "/library",
-    hex: "#f59e0b",
+    hex: "#b07d1e",
     span: "sm",
   },
   {
@@ -144,7 +144,7 @@ export const VERTICALS: Vertical[] = [
     desc: "Accredited verifiers, consultants, brokers and law firms — filtered by regime.",
     icon: "Users",
     href: "/directory",
-    hex: "#06b6d4",
+    hex: "#0f7c8c",
     span: "sm",
   },
   {
@@ -153,7 +153,7 @@ export const VERTICALS: Vertical[] = [
     desc: "Detect-review-publish monitoring on EUR-Lex, GOV.UK/HMRC and price feeds.",
     icon: "Bell",
     href: "/alerts",
-    hex: "#f43f5e",
+    hex: "#c2410c",
     span: "sm",
   },
   {
@@ -162,7 +162,7 @@ export const VERTICALS: Vertical[] = [
     desc: "Live ETS price, deadline countdowns and your obligations at a glance.",
     icon: "LayoutDashboard",
     href: "/dashboard",
-    hex: "#10b981",
+    hex: "#2f7d33",
     span: "md",
   },
   {
@@ -171,7 +171,7 @@ export const VERTICALS: Vertical[] = [
     desc: "Identity, role and regime tagging — the trust gate that powers the flywheel.",
     icon: "ShieldCheck",
     href: "/onboarding",
-    hex: "#2563eb",
+    hex: "#5b53b8",
     span: "md",
   },
 ];

@@ -22,7 +22,7 @@ export function PlatformShell({ children }: { children: React.ReactNode }) {
       <Sidebar />
       <div className="flex min-w-0 flex-1 flex-col">
         <Header />
-        <main className="min-h-0 flex-1 overflow-hidden p-5">
+        <main className="min-h-0 flex-1 overflow-hidden bg-surface p-5">
           <PageTransition>{children}</PageTransition>
         </main>
       </div>

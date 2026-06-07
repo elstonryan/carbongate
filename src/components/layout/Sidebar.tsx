@@ -48,21 +48,22 @@ export function Sidebar() {
     <motion.aside
       animate={{ width: sidebarCollapsed ? 64 : 240 }}
       transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-      className="relative z-30 flex h-screen shrink-0 flex-col border-r border-border bg-surface/60 backdrop-blur-xl"
+      className="relative z-30 flex h-screen shrink-0 flex-col border-r border-border bg-white"
     >
       {/* Brand */}
-      <div className="flex h-16 items-center gap-2.5 px-4">
+      <div className="flex h-16 items-center gap-2.5 border-b border-border px-4">
         <Link href="/dashboard" className="flex items-center gap-2.5 overflow-hidden">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-sm font-bold text-background">
-            C
+          <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary text-[11px] font-bold text-white">
+            CG
+            <span className="absolute inset-x-1 bottom-1 h-0.5 rounded-full bg-accent" />
           </span>
           {!sidebarCollapsed && (
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="whitespace-nowrap font-display text-lg font-semibold tracking-tight"
+              className="whitespace-nowrap font-display text-lg font-bold tracking-tight text-foreground"
             >
-              Carbon<span className="text-gradient">Gate</span>
+              Carbon<span className="text-primary">Gate</span>
             </motion.span>
           )}
         </Link>
@@ -79,10 +80,10 @@ export function Sidebar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "group relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-colors",
+                "group relative flex items-center gap-3 rounded-md px-3 py-2.5 text-sm transition-colors",
                 active
-                  ? "bg-primary/15 text-primary"
-                  : "text-muted-foreground hover:bg-white/5 hover:text-foreground"
+                  ? "bg-ec-blue-5 font-semibold text-primary"
+                  : "text-ec-grey hover:bg-muted hover:text-foreground"
               )}
             >
               {active && (
@@ -96,12 +97,12 @@ export function Sidebar() {
                 <span className="whitespace-nowrap">{item.label}</span>
               )}
               {item.adminOnly && !sidebarCollapsed && (
-                <span className="ml-auto rounded bg-white/5 px-1.5 py-0.5 text-[9px] font-medium text-muted-foreground">
+                <span className="ml-auto rounded bg-muted px-1.5 py-0.5 text-[9px] font-semibold text-ec-grey-75">
                   ADMIN
                 </span>
               )}
               {sidebarCollapsed && (
-                <span className="pointer-events-none absolute left-full ml-2 z-50 whitespace-nowrap rounded-md border border-border bg-surface px-2 py-1 text-xs opacity-0 shadow-xl transition-opacity group-hover:opacity-100">
+                <span className="pointer-events-none absolute left-full ml-2 z-50 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
                   {item.label}
                 </span>
               )}
@@ -114,7 +115,7 @@ export function Sidebar() {
       <div className="border-t border-border p-2">
         <button
           onClick={toggleSidebar}
-          className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
+          className="flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-sm text-ec-grey transition-colors hover:bg-muted hover:text-foreground"
         >
           <ChevronLeft
             className={cn(

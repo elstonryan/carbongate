@@ -10,71 +10,95 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1280px",
       },
     },
     extend: {
       colors: {
-        // Carbon Atlas — warm obsidian system
-        background: "#0b0c0e",
-        surface: "#141517",
-        card: {
-          DEFAULT: "rgba(20, 21, 24, 0.7)",
-          foreground: "#f4f4f5",
-        },
-        border: "rgba(255,255,255,0.08)",
-        input: "rgba(255,255,255,0.08)",
-        ring: "#34d399",
+        /* ── CarbonGate — European Commission institutional system ──
+           Anchored on the official EC colour palette (ECL "EU" theme):
+           EC Blue #004494 · EC Yellow #ffd617 · EC grey scale on white. */
+        background: "#ffffff",
+        surface: "#f4f6fa",
+        foreground: "#13284b", // deep institutional navy ink
+        border: "#dbe3ec",
+        input: "#c9d4e2",
+        ring: "#004494",
+
+        card: { DEFAULT: "#ffffff", foreground: "#13284b" },
+        popover: { DEFAULT: "#ffffff", foreground: "#13284b" },
+
         primary: {
-          DEFAULT: "#34d399",
-          dark: "#059669",
-          foreground: "#06120c",
+          DEFAULT: "#004494", // EC Blue 100
+          dark: "#003776", // EC Blue 120
+          light: "#1c63b5",
+          foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#38e1d6",
-          foreground: "#04110f",
+          DEFAULT: "#006fb4", // EC info blue — interactive accent
+          foreground: "#ffffff",
         },
         accent: {
-          DEFAULT: "#a78bfa",
-          foreground: "#0c0814",
+          DEFAULT: "#ffd617", // EC Yellow 100 — used sparingly
+          dark: "#f8ae21",
+          foreground: "#13284b",
         },
         muted: {
-          DEFAULT: "#71717a",
-          foreground: "#a1a1aa",
+          DEFAULT: "#eef2f7",
+          foreground: "#5a6b85",
         },
-        foreground: "#f4f4f5",
-        success: "#34d399",
-        warning: "#f59e0b",
-        danger: "#fb7185",
-        destructive: {
-          DEFAULT: "#fb7185",
-          foreground: "#1a0a0c",
+
+        success: "#2f7d33",
+        warning: "#f29527",
+        danger: "#da2130",
+        destructive: { DEFAULT: "#da2130", foreground: "#ffffff" },
+
+        /* Direct-access EC scales */
+        ec: {
+          blue: "#004494",
+          "blue-dark": "#003776",
+          "blue-deep": "#002a5c",
+          "blue-75": "#4073af",
+          "blue-50": "#7fa1c9",
+          "blue-25": "#bfd0e4",
+          "blue-5": "#f2f5f9",
+          yellow: "#ffd617",
+          "yellow-dark": "#f8ae21",
+          grey: "#404040",
+          "grey-75": "#707070",
+          "grey-50": "#9f9f9f",
+          "grey-25": "#cfcfcf",
+          "grey-15": "#e3e3e3",
+          "grey-5": "#f5f5f5",
         },
-        popover: {
-          DEFAULT: "#141517",
-          foreground: "#f4f4f5",
-        },
-        // Industry world accents
+
+        /* Sector accents — muted for institutional use as small chips */
         industry: {
-          steel: "#ff5a1f",
-          aluminium: "#38e1d6",
-          cement: "#f0a93b",
-          fertilizers: "#4ade80",
-          hydrogen: "#a78bfa",
-          electricity: "#facc15",
+          steel: "#b4531f",
+          aluminium: "#0f7c8c",
+          cement: "#b07d1e",
+          fertilizers: "#3f7d3f",
+          hydrogen: "#5b53b8",
+          electricity: "#9a7d10",
         },
       },
       borderRadius: {
-        lg: "0.75rem",
-        md: "0.5rem",
-        sm: "0.375rem",
+        lg: "0.5rem",
+        md: "0.375rem",
+        sm: "0.25rem",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "Georgia", "serif"],
+        display: ["var(--font-inter)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+      },
+      boxShadow: {
+        card: "0 1px 2px rgba(19,40,75,0.04), 0 8px 24px -18px rgba(19,40,75,0.16)",
+        "card-hover":
+          "0 2px 4px rgba(19,40,75,0.06), 0 16px 40px -20px rgba(19,40,75,0.26)",
+        focus: "0 0 0 3px rgba(0,68,148,0.25)",
       },
       backdropBlur: {
         xs: "2px",

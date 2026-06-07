@@ -25,8 +25,8 @@ const card = {
 
 export function VerticalsBento() {
   return (
-    <section id="platform" className="relative px-6 py-28">
-      <div className="mx-auto max-w-6xl">
+    <section id="platform" className="relative border-t border-border bg-surface px-6 py-24">
+      <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,12 +40,12 @@ export function VerticalsBento() {
               One platform, every tool
             </span>
           </div>
-          <h2 className="mt-4 font-display text-5xl font-semibold tracking-tightest sm:text-6xl">
+          <h2 className="mt-4 font-display text-4xl font-bold tracking-tightest text-foreground sm:text-5xl">
             Eight verticals.
-            <span className="text-gradient"> All connected.</span>
+            <span className="text-primary"> All connected.</span>
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-white/60">
-            Each module stands alone and snaps into the rest. Tap any tile to jump
+          <p className="mt-5 text-lg leading-relaxed text-ec-grey">
+            Each module stands alone and snaps into the rest. Open any tile to jump
             straight in.
           </p>
         </motion.div>
@@ -61,40 +61,36 @@ export function VerticalsBento() {
             const Icon = ICONS[v.icon];
             const isFeature = v.id === "ai";
             return (
-              <motion.div key={v.id} variants={card} whileHover={{ y: -5 }} className={`group ${BENTO[v.id]} col-span-1`}>
+              <motion.div key={v.id} variants={card} whileHover={{ y: -4 }} className={`group ${BENTO[v.id]} col-span-1`}>
                 <Link
                   href={v.href}
-                  className="card-atlas relative flex h-full w-full flex-col overflow-hidden p-6 transition-all duration-300 hover:border-white/20"
+                  className="card-atlas card-atlas-hover relative flex h-full w-full flex-col overflow-hidden p-6"
                 >
                   <div
                     className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    style={{ background: `radial-gradient(120% 120% at 100% 0%, ${v.hex}26, transparent 60%)` }}
-                  />
-                  <div
-                    className="absolute -bottom-12 -left-12 h-40 w-40 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-40"
-                    style={{ backgroundColor: v.hex }}
+                    style={{ background: `radial-gradient(120% 120% at 100% 0%, ${v.hex}14, transparent 60%)` }}
                   />
                   <div className="relative flex items-start justify-between">
                     <span
-                      className="flex h-12 w-12 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110"
-                      style={{ backgroundColor: `${v.hex}1f`, color: v.hex }}
+                      className="flex h-12 w-12 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-105"
+                      style={{ backgroundColor: `${v.hex}1a`, color: v.hex }}
                     >
                       {Icon && <Icon className="h-6 w-6" />}
                     </span>
                     <div className="flex items-center gap-2">
                       {v.tag && (
-                        <span className="rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-[#06120c]" style={{ backgroundColor: v.hex }}>
+                        <span className="rounded-full bg-primary/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-primary">
                           {v.tag}
                         </span>
                       )}
-                      <ArrowUpRight className="h-5 w-5 text-white/25 transition-all duration-300 group-hover:rotate-12 group-hover:text-white" />
+                      <ArrowUpRight className="h-5 w-5 text-ec-grey-50 transition-all duration-300 group-hover:rotate-12 group-hover:text-primary" />
                     </div>
                   </div>
                   <div className="relative mt-auto pt-4">
-                    <h3 className={`font-display font-semibold tracking-tight text-white ${isFeature ? "text-3xl" : "text-xl"}`}>
+                    <h3 className={`font-display font-bold tracking-tight text-foreground ${isFeature ? "text-3xl" : "text-xl"}`}>
                       {v.title}
                     </h3>
-                    <p className={`mt-1.5 leading-relaxed text-white/55 ${isFeature ? "max-w-md text-base" : "text-sm"}`}>
+                    <p className={`mt-1.5 leading-relaxed text-ec-grey ${isFeature ? "max-w-md text-base" : "text-sm"}`}>
                       {v.desc}
                     </p>
                   </div>
