@@ -1,0 +1,35 @@
+import {
+  Bot,
+  Calculator,
+  MessageSquare,
+  BookOpen,
+  Users,
+  Bell,
+  LayoutDashboard,
+  ShieldCheck,
+  Factory,
+  Layers,
+  Building2,
+  Sprout,
+  FlaskConical,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
+
+/** Map icon-name strings (from landing-data) to lucide components. */
+export const ICONS: Record<string, LucideIcon> = {
+  Bot,
+  Calculator,
+  MessageSquare,
+  BookOpen,
+  Users,
+  Bell,
+  LayoutDashboard,
+  ShieldCheck,
+  Factory,
+  Layers,
+  Building2,
+  Sprout,
+  FlaskConical,
+  Zap,
+};
