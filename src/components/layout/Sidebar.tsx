@@ -13,6 +13,7 @@ import {
   Bell,
   User,
   Shield,
+  Factory,
   ChevronLeft,
   type LucideIcon,
 } from "lucide-react";
@@ -28,6 +29,7 @@ interface NavItem {
 
 const NAV: NavItem[] = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/industries", label: "Industries", icon: Factory },
   { href: "/ai-assistant", label: "AI Assistant", icon: Bot },
   { href: "/calculator", label: "Calculator", icon: Calculator },
   { href: "/community", label: "Community", icon: MessageSquare },
@@ -58,9 +60,9 @@ export function Sidebar() {
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="whitespace-nowrap text-lg font-semibold tracking-tight"
+              className="whitespace-nowrap font-display text-lg font-semibold tracking-tight"
             >
-              Carbon<span className="text-primary">Gate</span>
+              Carbon<span className="text-gradient">Gate</span>
             </motion.span>
           )}
         </Link>

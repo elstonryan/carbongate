@@ -18,7 +18,7 @@ export default function CommunityPage() {
         animate={{ opacity: 1, y: 0 }}
         className="shrink-0"
       >
-        <h1 className="text-xl font-bold tracking-tight">Community</h1>
+        <h1 className="font-display text-2xl font-semibold tracking-tight">Community</h1>
         <p className="text-sm text-muted-foreground">
           Verified professionals · Regime-gated channels · Expert-endorsed answers
         </p>

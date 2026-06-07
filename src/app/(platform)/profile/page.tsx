@@ -28,7 +28,7 @@ export default function ProfilePage() {
         animate={{ opacity: 1, y: 0 }}
         className="shrink-0"
       >
-        <h1 className="text-xl font-bold tracking-tight">Profile</h1>
+        <h1 className="font-display text-2xl font-semibold tracking-tight">Profile</h1>
         <p className="text-sm text-muted-foreground">
           Your account, verification status, and preferences
         </p>

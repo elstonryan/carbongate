@@ -21,7 +21,7 @@ export default function DashboardPage() {
         className="flex shrink-0 flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
       >
         <div>
-          <h1 className="text-xl font-bold tracking-tight">
+          <h1 className="font-display text-2xl font-semibold tracking-tight">
             Welcome back, {user.name.split(" ")[0]}
           </h1>
           <p className="text-sm text-muted-foreground">

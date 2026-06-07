@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import { Providers } from "@/components/providers";
 import "./globals.css";
 
@@ -9,6 +9,14 @@ const inter = Inter({
   display: "swap",
 });
 
+// Expressive editorial display serif — the signature of the Carbon Atlas look
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  axes: ["opsz", "SOFT", "WONK"],
+});
+
 const mono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
@@ -16,13 +24,13 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CarbonGate — The verified source of truth for carbon border compliance",
+  title: "CarbonGate — The atlas of carbon border compliance",
   description:
-    "A verified professional community and non-hallucinating AI knowledge engine for carbon border adjustment regimes — EU CBAM deep, UK fast-follow, US and others monitored.",
+    "A verified professional community and non-hallucinating AI knowledge engine for carbon border adjustment regimes — EU CBAM deep, UK fast-follow, US and others monitored. Explore steel, aluminium, cement, fertilizers, hydrogen and electricity.",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0f1e",
+  themeColor: "#0b0c0e",
   width: "device-width",
   initialScale: 1,
 };
@@ -34,7 +42,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={`${inter.variable} ${mono.variable} font-sans antialiased`}>
+      <body
+        className={`${inter.variable} ${fraunces.variable} ${mono.variable} font-sans antialiased`}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>

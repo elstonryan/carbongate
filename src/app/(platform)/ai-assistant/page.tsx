@@ -13,7 +13,7 @@ export default function AIAssistantPage() {
       >
         <div className="flex items-end justify-between">
           <div>
-            <h1 className="text-xl font-bold tracking-tight">AI Assistant</h1>
+            <h1 className="font-display text-2xl font-semibold tracking-tight">AI Assistant</h1>
             <p className="text-sm text-muted-foreground">
               13-step anti-hallucination pipeline · Citation-grounded · Temperature 0
             </p>

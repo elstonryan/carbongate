@@ -26,7 +26,7 @@ export default function CalculatorPage() {
       >
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h1 className="text-xl font-bold tracking-tight">Calculator</h1>
+            <h1 className="font-display text-2xl font-semibold tracking-tight">Calculator</h1>
             <p className="text-sm text-muted-foreground">
               Deterministic cost scenarios — the AI never does the maths.
             </p>

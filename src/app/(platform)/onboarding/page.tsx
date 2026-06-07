@@ -17,7 +17,7 @@ export default function OnboardingPage() {
         animate={{ opacity: 1, y: 0 }}
         className="shrink-0"
       >
-        <h1 className="text-xl font-bold tracking-tight">Join CarbonGate</h1>
+        <h1 className="font-display text-2xl font-semibold tracking-tight">Join CarbonGate</h1>
         <p className="text-sm text-muted-foreground">
           Verification takes up to 72 hours · Gated community · Role + regime-tagged
         </p>

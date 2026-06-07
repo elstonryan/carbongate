@@ -64,7 +64,7 @@ export default function DirectoryPage() {
       >
         <div className="flex items-end justify-between">
           <div>
-            <h1 className="text-xl font-bold tracking-tight">Expert Directory</h1>
+            <h1 className="font-display text-2xl font-semibold tracking-tight">Expert Directory</h1>
             <p className="text-sm text-muted-foreground">
               Accredited verifiers, consultants, law firms and brokers — regime-filtered
             </p>

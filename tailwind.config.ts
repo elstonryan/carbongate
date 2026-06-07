@@ -17,44 +17,53 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // CarbonGate dark design system
-        background: "#0a0f1e",
-        surface: "#111827",
+        // Carbon Atlas — warm obsidian system
+        background: "#0b0c0e",
+        surface: "#141517",
         card: {
-          DEFAULT: "rgba(17, 24, 39, 0.8)",
-          foreground: "#f9fafb",
+          DEFAULT: "rgba(20, 21, 24, 0.7)",
+          foreground: "#f4f4f5",
         },
         border: "rgba(255,255,255,0.08)",
         input: "rgba(255,255,255,0.08)",
-        ring: "#10b981",
+        ring: "#34d399",
         primary: {
-          DEFAULT: "#10b981",
+          DEFAULT: "#34d399",
           dark: "#059669",
-          foreground: "#0a0f1e",
+          foreground: "#06120c",
         },
         secondary: {
-          DEFAULT: "#3b82f6",
-          foreground: "#f9fafb",
+          DEFAULT: "#38e1d6",
+          foreground: "#04110f",
         },
         accent: {
-          DEFAULT: "#8b5cf6",
-          foreground: "#f9fafb",
+          DEFAULT: "#a78bfa",
+          foreground: "#0c0814",
         },
         muted: {
-          DEFAULT: "#6b7280",
-          foreground: "#9ca3af",
+          DEFAULT: "#71717a",
+          foreground: "#a1a1aa",
         },
-        foreground: "#f9fafb",
-        success: "#10b981",
+        foreground: "#f4f4f5",
+        success: "#34d399",
         warning: "#f59e0b",
-        danger: "#ef4444",
+        danger: "#fb7185",
         destructive: {
-          DEFAULT: "#ef4444",
-          foreground: "#f9fafb",
+          DEFAULT: "#fb7185",
+          foreground: "#1a0a0c",
         },
         popover: {
-          DEFAULT: "#111827",
-          foreground: "#f9fafb",
+          DEFAULT: "#141517",
+          foreground: "#f4f4f5",
+        },
+        // Industry world accents
+        industry: {
+          steel: "#ff5a1f",
+          aluminium: "#38e1d6",
+          cement: "#f0a93b",
+          fertilizers: "#4ade80",
+          hydrogen: "#a78bfa",
+          electricity: "#facc15",
         },
       },
       borderRadius: {
@@ -64,6 +73,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       backdropBlur: {

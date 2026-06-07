@@ -37,7 +37,7 @@ export default function LibraryPage() {
       >
         <div className="flex items-end justify-between">
           <div>
-            <h1 className="text-xl font-bold tracking-tight">Regulation Library</h1>
+            <h1 className="font-display text-2xl font-semibold tracking-tight">Regulation Library</h1>
             <p className="text-sm text-muted-foreground">
               Curated regulatory documents · Human-reviewed · Regime-tagged
             </p>

@@ -43,7 +43,7 @@ export default function AlertsPage() {
       >
         <div className="flex items-end justify-between">
           <div>
-            <h1 className="text-xl font-bold tracking-tight">Alerts Feed</h1>
+            <h1 className="font-display text-2xl font-semibold tracking-tight">Alerts Feed</h1>
             <p className="text-sm text-muted-foreground">
               Regulatory changes, price movements, deadline reminders — regime-tagged
             </p>

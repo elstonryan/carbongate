@@ -67,7 +67,7 @@ export default function AdminPage() {
       >
         <div className="flex items-center gap-2">
           <Shield className="h-5 w-5 text-primary" />
-          <h1 className="text-xl font-bold tracking-tight">Admin</h1>
+          <h1 className="font-display text-2xl font-semibold tracking-tight">Admin</h1>
           <span className="rounded-full bg-danger/10 px-2 py-0.5 text-[10px] font-medium text-danger">
             Restricted
           </span>
