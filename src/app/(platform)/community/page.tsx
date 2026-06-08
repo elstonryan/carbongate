@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ChannelSidebar } from "@/components/community/ChannelSidebar";
 import { ThreadList } from "@/components/community/ThreadList";
 import { ThreadDetail } from "@/components/community/ThreadDetail";
+import { toast } from "@/lib/store/toast-store";
 import type { ForumThread } from "@/lib/types";
 
 export default function CommunityPage() {
@@ -31,7 +32,7 @@ export default function CommunityPage() {
         className="flex min-h-0 flex-1 gap-3"
       >
         {/* Channel sidebar */}
-        <div className="w-52 shrink-0">
+        <div className="hidden w-52 shrink-0 md:block">
           <ChannelSidebar
             activeChannel={activeChannel}
             onSelect={(id) => {
@@ -47,7 +48,15 @@ export default function CommunityPage() {
             <span className="text-xs font-semibold text-muted-foreground">
               #{activeChannel}
             </span>
-            <button className="ml-auto rounded-lg bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary hover:bg-primary/20 transition-colors">
+            <button
+              onClick={() =>
+                toast("Draft started", {
+                  variant: "info",
+                  description: `New thread in #${activeChannel} — verified members only.`,
+                })
+              }
+              className="ml-auto rounded-lg bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary hover:bg-primary/20 transition-colors"
+            >
               + New thread
             </button>
           </div>

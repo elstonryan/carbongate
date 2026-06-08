@@ -9,6 +9,10 @@ interface AppState {
   toggleSidebar: () => void;
   setSidebarCollapsed: (collapsed: boolean) => void;
 
+  // Mobile off-canvas nav (lg-down)
+  mobileNavOpen: boolean;
+  setMobileNavOpen: (open: boolean) => void;
+
   regimeContext: RegimeContext;
   setRegimeContext: (regime: RegimeContext) => void;
 
@@ -29,6 +33,9 @@ export const useAppStore = create<AppState>()(
       toggleSidebar: () =>
         set((state) => ({ sidebarCollapsed: !state.sidebarCollapsed })),
       setSidebarCollapsed: (collapsed) => set({ sidebarCollapsed: collapsed }),
+
+      mobileNavOpen: false,
+      setMobileNavOpen: (open) => set({ mobileNavOpen: open }),
 
       regimeContext: "EU",
       setRegimeContext: (regime) => set({ regimeContext: regime }),

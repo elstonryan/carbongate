@@ -56,7 +56,7 @@ export function AlertFilters({
     <motion.div
       initial={{ opacity: 0, x: -8 }}
       animate={{ opacity: 1, x: 0 }}
-      className="flex h-full w-52 shrink-0 flex-col rounded-xl border border-border bg-surface/60 backdrop-blur-xl"
+      className="hidden h-full w-52 shrink-0 flex-col rounded-xl border border-border bg-surface/60 backdrop-blur-xl md:flex"
     >
       <div className="flex items-center justify-between border-b border-border px-3 py-3">
         <div className="flex items-center gap-1.5">

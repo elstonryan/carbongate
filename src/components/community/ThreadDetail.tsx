@@ -41,7 +41,7 @@ export function ThreadDetail({ thread, onClose }: Props) {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: "100%", opacity: 0 }}
           transition={{ type: "spring", bounce: 0.15, duration: 0.45 }}
-          className="flex h-full w-80 shrink-0 flex-col rounded-xl border border-border bg-surface/80 backdrop-blur-xl"
+          className="fixed inset-0 z-40 flex h-full w-full flex-col border border-border bg-white backdrop-blur-xl md:relative md:inset-auto md:z-auto md:w-80 md:shrink-0 md:rounded-xl md:bg-surface/80"
         >
           {/* Header */}
           <div className="flex shrink-0 items-start gap-2 border-b border-border p-4">

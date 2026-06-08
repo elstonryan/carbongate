@@ -48,7 +48,7 @@ export function Sidebar() {
     <motion.aside
       animate={{ width: sidebarCollapsed ? 64 : 240 }}
       transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-      className="relative z-30 flex h-screen shrink-0 flex-col border-r border-border bg-white"
+      className="relative z-30 hidden h-screen shrink-0 flex-col border-r border-border bg-white lg:flex"
     >
       {/* Brand */}
       <div className="flex h-16 items-center gap-2.5 border-b border-border px-4">

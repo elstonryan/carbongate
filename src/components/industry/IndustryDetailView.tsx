@@ -11,7 +11,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { SiteNav } from "@/components/site/SiteNav";
-import { IndustryBackground } from "@/components/industry/IndustryBackground";
+import { IndustryScene } from "@/components/industry/IndustryScene";
 import { ICONS } from "@/components/landing/icon-map";
 import { INDUSTRIES, type Industry } from "@/lib/industries";
 
@@ -39,9 +39,9 @@ export function IndustryDetailView({ industry }: { industry: Industry }) {
     <div className="relative min-h-screen bg-background text-foreground">
       <SiteNav />
 
-      {/* ============ HERO (light sector panel) ============ */}
-      <section className="world relative flex min-h-[78vh] flex-col justify-end overflow-hidden border-b border-border px-6 pb-16 pt-36">
-        <IndustryBackground industry={industry} intensity={0.5} />
+      {/* ============ HERO (parallax industrial scene) ============ */}
+      <section className="world relative flex min-h-[88vh] flex-col justify-end overflow-hidden border-b border-border px-6 pb-16 pt-36">
+        <IndustryScene industry={industry} />
 
         <div className="relative z-10 mx-auto w-full max-w-6xl">
           <motion.div

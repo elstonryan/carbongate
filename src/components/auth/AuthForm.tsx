@@ -8,6 +8,7 @@ import { Mail, Lock, User, Building2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { toast } from "@/lib/store/toast-store";
 
 const field = {
   hidden: { opacity: 0, x: -12 },
@@ -24,6 +25,12 @@ export function AuthForm({ mode }: { mode: "signin" | "signup" }) {
     // Mock auth — no real Supabase call in mock mode.
     setLoading(true);
     setTimeout(() => {
+      toast(isSignup ? "Account created" : "Signed in", {
+        variant: "success",
+        description: isSignup
+          ? "Let's get you verified."
+          : "Welcome back to CarbonGate.",
+      });
       router.push(isSignup ? "/onboarding" : "/dashboard");
     }, 900);
   }

@@ -136,7 +136,7 @@ export function ChatInterface() {
   return (
     <div className="flex h-full gap-3">
       {/* Session list */}
-      <div className="flex w-52 shrink-0 flex-col rounded-xl border border-border bg-surface/60 backdrop-blur-xl">
+      <div className="hidden w-52 shrink-0 flex-col rounded-xl border border-border bg-surface/60 backdrop-blur-xl md:flex">
         <div className="flex items-center justify-between border-b border-border px-3 py-3">
           <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
             Conversations

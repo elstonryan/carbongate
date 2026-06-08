@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Flag, ThumbsUp, Bot, AlertTriangle } from "lucide-react";
 import { ConfidenceBadge } from "@/components/shared/ConfidenceBadge";
+import { toast } from "@/lib/store/toast-store";
 import { CitationPanel } from "@/components/ai-chat/CitationPanel";
 import { initials, cn } from "@/lib/utils";
 import type { ChatMessage } from "@/lib/types";
@@ -111,11 +112,27 @@ export function MessageBubble({ message, userName = "You" }: Props) {
 
         {/* Actions */}
         <div className="mt-2 flex items-center gap-3">
-          <button className="flex items-center gap-1 text-[10px] text-muted-foreground/60 transition-colors hover:text-primary">
+          <button
+            onClick={() =>
+              toast("Answer endorsed", {
+                variant: "success",
+                description: "Thanks — expert endorsements improve ranking.",
+              })
+            }
+            className="flex items-center gap-1 text-[10px] text-muted-foreground/60 transition-colors hover:text-primary"
+          >
             <ThumbsUp className="h-3 w-3" />
             Endorse
           </button>
-          <button className="flex items-center gap-1 text-[10px] text-muted-foreground/60 transition-colors hover:text-danger">
+          <button
+            onClick={() =>
+              toast("Flagged for review", {
+                variant: "warning",
+                description: "Sent to the review queue — corrections fix the corpus.",
+              })
+            }
+            className="flex items-center gap-1 text-[10px] text-muted-foreground/60 transition-colors hover:text-danger"
+          >
             <Flag className="h-3 w-3" />
             Flag
           </button>

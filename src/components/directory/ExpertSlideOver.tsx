@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Star, MapPin, Award, Mail } from "lucide-react";
 import { RegimeBadge } from "@/components/shared/RegimeBadge";
 import { initials } from "@/lib/utils";
+import { toast } from "@/lib/store/toast-store";
 import type { ExpertProfile } from "@/lib/types";
 
 interface Props {
@@ -190,7 +191,16 @@ export function ExpertSlideOver({ expert, onClose }: Props) {
 
             {/* Contact */}
             <div className="shrink-0 border-t border-border p-4">
-              <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3 text-sm font-semibold text-background transition-opacity hover:opacity-90">
+              <button
+                onClick={() => {
+                  toast("Introduction requested", {
+                    variant: "success",
+                    description: `We'll connect you with ${expert.name} shortly.`,
+                  });
+                  onClose();
+                }}
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              >
                 <Mail className="h-4 w-4" />
                 Request introduction
               </button>

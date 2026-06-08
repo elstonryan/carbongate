@@ -49,7 +49,7 @@ export function Header() {
   ).length;
 
   return (
-    <header className="flex h-16 shrink-0 items-center justify-between border-b border-border bg-white px-5">
+    <header className="hidden h-16 shrink-0 items-center justify-between border-b border-border bg-white px-5 lg:flex">
       <Breadcrumb items={crumbs} />
 
       <div className="flex items-center gap-2.5">

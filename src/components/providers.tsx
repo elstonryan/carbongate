@@ -1,21 +1,23 @@
 "use client";
 
 import { ThemeProvider } from "next-themes";
+import { Toaster } from "@/components/shared/Toaster";
 
 /**
- * Global client-side providers. The app is dark-only, so the theme provider is
- * locked to "dark" and switching is disabled.
+ * Global client-side providers. The platform uses the light EC-institutional
+ * theme. The Toaster renders mock-action feedback app-wide.
  */
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="dark"
-      forcedTheme="dark"
+      defaultTheme="light"
+      forcedTheme="light"
       enableSystem={false}
       disableTransitionOnChange
     >
       {children}
+      <Toaster />
     </ThemeProvider>
   );
 }
