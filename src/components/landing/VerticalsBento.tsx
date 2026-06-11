@@ -55,7 +55,7 @@ export function VerticalsBento() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-60px" }}
-          className="mt-12 grid auto-rows-[180px] grid-cols-1 gap-4 sm:grid-cols-6 lg:grid-cols-12"
+          className="mt-12 grid auto-rows-[minmax(180px,auto)] grid-cols-1 gap-4 sm:grid-cols-6 lg:grid-cols-12"
         >
           {VERTICALS.map((v) => {
             const Icon = ICONS[v.icon];
@@ -65,10 +65,11 @@ export function VerticalsBento() {
                 <Link
                   href={v.href}
                   className="card-atlas card-atlas-hover relative flex h-full w-full flex-col overflow-hidden p-6"
+                  style={{ background: `radial-gradient(120% 120% at 100% 0%, ${v.hex}0d, #ffffff 58%)` }}
                 >
                   <div
                     className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    style={{ background: `radial-gradient(120% 120% at 100% 0%, ${v.hex}14, transparent 60%)` }}
+                    style={{ background: `radial-gradient(120% 120% at 100% 0%, ${v.hex}1a, transparent 60%)` }}
                   />
                   <div className="relative flex items-start justify-between">
                     <span

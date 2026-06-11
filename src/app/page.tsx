@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Search, Calculator, Ban } from "lucide-react";
 import { SiteNav } from "@/components/site/SiteNav";
 import { Hero } from "@/components/landing/Hero";
+import { Marquee } from "@/components/landing/Marquee";
 import { IndustryShowcase } from "@/components/landing/IndustryShowcase";
 import { VerticalsBento } from "@/components/landing/VerticalsBento";
 import { StatsBar } from "@/components/landing/StatsBar";
@@ -29,6 +30,12 @@ export default function LandingPage() {
 
       <main className="relative z-10">
         <Hero />
+
+        {/* living ticker of sectors + regimes */}
+        <div className="relative border-y border-border bg-surface/60 py-4">
+          <Marquee />
+        </div>
+
         <IndustryShowcase />
         <VerticalsBento />
 

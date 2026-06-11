@@ -14,10 +14,11 @@ const LINKS = [
 
 /**
  * Public-site header in the European Commission institutional language:
- * a slim utility strip over a solid white nav with a clear information
- * architecture. The `variant` prop is retained for compatibility.
+ * a slim utility strip over the main nav. `variant="dark"` renders a
+ * translucent dark-glass bar for the immersive industry worlds.
  */
-export function SiteNav(_props: { variant?: "light" | "dark" }) {
+export function SiteNav({ variant = "light" }: { variant?: "light" | "dark" }) {
+  const dark = variant === "dark";
   return (
     <motion.header
       initial={{ y: -16, opacity: 0 }}
@@ -47,15 +48,23 @@ export function SiteNav(_props: { variant?: "light" | "dark" }) {
       </div>
 
       {/* Main bar */}
-      <div className="border-b border-border bg-white/90 backdrop-blur-md">
+      <div
+        className={
+          dark
+            ? "border-b border-white/10 bg-[#070b16]/65 backdrop-blur-xl"
+            : "border-b border-border bg-white/90 backdrop-blur-md"
+        }
+      >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
           <Link href="/" className="flex items-center gap-2.5">
             <span className="relative flex h-9 w-9 items-center justify-center rounded-md bg-primary text-[13px] font-bold tracking-tight text-white">
               CG
               <span className="absolute inset-x-1 bottom-1 h-0.5 rounded-full bg-accent" />
             </span>
-            <span className="text-[17px] font-bold tracking-tight text-foreground">
-              Carbon<span className="text-primary">Gate</span>
+            <span
+              className={`text-[17px] font-bold tracking-tight ${dark ? "text-white" : "text-foreground"}`}
+            >
+              Carbon<span className={dark ? "text-[#6fb9ff]" : "text-primary"}>Gate</span>
             </span>
           </Link>
 
@@ -64,7 +73,11 @@ export function SiteNav(_props: { variant?: "light" | "dark" }) {
               <Link
                 key={l.href}
                 href={l.href}
-                className="rounded-md px-3 py-2 text-sm font-medium text-ec-grey transition-colors hover:bg-muted hover:text-foreground"
+                className={
+                  dark
+                    ? "rounded-md px-3 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+                    : "rounded-md px-3 py-2 text-sm font-medium text-ec-grey transition-colors hover:bg-muted hover:text-foreground"
+                }
               >
                 {l.label}
               </Link>
@@ -74,13 +87,21 @@ export function SiteNav(_props: { variant?: "light" | "dark" }) {
           <div className="flex items-center gap-2">
             <Link
               href="/auth/signin"
-              className="hidden rounded-md px-3 py-2 text-sm font-semibold text-foreground transition-colors hover:text-primary sm:block"
+              className={
+                dark
+                  ? "hidden rounded-md px-3 py-2 text-sm font-semibold text-white/85 transition-colors hover:text-white sm:block"
+                  : "hidden rounded-md px-3 py-2 text-sm font-semibold text-foreground transition-colors hover:text-primary sm:block"
+              }
             >
               Sign in
             </Link>
             <Link
               href="/onboarding"
-              className="group inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-primary-dark"
+              className={
+                dark
+                  ? "group inline-flex items-center gap-1.5 rounded-md bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm transition-all hover:bg-white/85"
+                  : "group inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-primary-dark"
+              }
             >
               Apply to join
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { INDUSTRIES } from "@/lib/industries";
 import { ICONS } from "@/components/landing/icon-map";
+import { IndustryScene } from "@/components/industry/IndustryScene";
 
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.07 } } };
 const card = {
@@ -53,20 +54,21 @@ export function IndustryShowcase() {
               <motion.div key={ind.id} variants={card}>
                 <Link
                   href={`/industries/${ind.id}`}
-                  className={`world card-atlas-hover group relative flex h-64 flex-col justify-end overflow-hidden rounded-xl border border-border p-6 ${ind.world}`}
+                  className="group relative flex h-64 flex-col justify-end overflow-hidden rounded-xl border border-border p-6 shadow-card transition-all duration-500 hover:-translate-y-1 hover:shadow-card-hover"
                 >
-                  <div className="absolute inset-0 blueprint opacity-50" />
+                  {/* living sector scene */}
+                  <div className="absolute inset-0 scale-[1.03] transition-transform duration-700 ease-out will-change-transform group-hover:scale-[1.08]">
+                    <IndustryScene industry={ind} preview />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/30 to-transparent" />
+
                   <div
-                    className="absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-[0.1] blur-2xl transition-all duration-500 group-hover:opacity-20"
-                    style={{ background: ind.accent }}
-                  />
-                  <div
-                    className="absolute left-6 top-6 flex h-12 w-12 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-105"
-                    style={{ backgroundColor: `${ind.accent}1a`, color: ind.accent }}
+                    className="absolute left-6 top-6 flex h-12 w-12 items-center justify-center rounded-xl border bg-white/85 backdrop-blur-md transition-transform duration-300 group-hover:scale-105"
+                    style={{ borderColor: `${ind.accent}40`, color: ind.accent }}
                   >
                     {Icon && <Icon className="h-6 w-6" />}
                   </div>
-                  <div className="absolute right-6 top-6 rounded-full border border-border bg-white/80 px-3 py-1 font-mono text-xs text-ec-grey-75 backdrop-blur">
+                  <div className="absolute right-6 top-6 rounded-full border border-border bg-white/85 px-3 py-1 font-mono text-xs text-ec-grey-75 backdrop-blur">
                     {ind.defaultIntensity.low}–{ind.defaultIntensity.high}
                   </div>
                   <div className="relative">
@@ -75,7 +77,10 @@ export function IndustryShowcase() {
                       {ind.name}
                     </h3>
                     <p className="mt-2 line-clamp-2 text-sm text-ec-grey">{ind.tagline}</p>
-                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-transform group-hover:translate-x-1">
+                    <span
+                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold transition-transform group-hover:translate-x-1"
+                      style={{ color: ind.accent }}
+                    >
                       Explore sector
                       <ArrowRight className="h-4 w-4" />
                     </span>
